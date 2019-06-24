@@ -23,7 +23,7 @@ class Perceptron:
 		z = np.dot(x, self.W[1:]) + self.W[0]
 		return self.step(z)
 
-	def lost(self, x, y):
+	def loss(self, x, y):
 		error = 0
 		for j in range(len(y)):
 			y_hat = self.feed_forward(x[j])
@@ -38,7 +38,7 @@ class Perceptron:
 		self.errors = []
 
 		for _ in range(self.epochs):
-			self.errors.append(self.lost(x, y))
+			self.errors.append(self.loss(x, y))
 
 		return self
 

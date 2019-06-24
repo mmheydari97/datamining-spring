@@ -46,3 +46,7 @@ class NeuralNetwork:
 			self.errors.append(self.loss())
 			self.backprop()
 		return self
+
+	def predict(self, x_t):
+		self.h = sigmoid(np.dot(x_t, self.w0))
+		return sigmoid(np.dot(self.h, self.w1))
