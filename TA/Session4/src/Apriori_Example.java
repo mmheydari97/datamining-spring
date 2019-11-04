@@ -27,11 +27,11 @@ public class Apriori_Example {
         //get instance object
         Instances data=source.getDataSet();
 
-        Apriori fpgrowth_model = new Apriori();
+        Apriori apriori_model = new Apriori();
         String[] options = { "-N", "10000", "-C", "0.9", "-M", "0.1", "-S", "0.8"};
-        fpgrowth_model.setOptions(options);
-        fpgrowth_model.buildAssociations(data);
-        AssociationRules ARS = fpgrowth_model.getAssociationRules();
+        apriori_model.setOptions(options);
+        apriori_model.buildAssociations(data);
+        AssociationRules ARS = apriori_model.getAssociationRules();
         List<AssociationRule> ruleList = ARS.getRules();
 
         for(int i = 0; i < ruleList.size(); i++) {
